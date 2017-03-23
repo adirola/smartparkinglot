@@ -61,7 +61,8 @@ router.route('/parking/:parking_id')
 	  	res.send(customError);
 	  }
 	  parking.space = req.body.space;
-	  parking.empty = req.body.empty; // update the bears info
+	  parking.isEmpty = req.body.isEmpty;
+    parking.isReserved = req.body.isReserved; // update the bears info
 	  parking.save(function(err) {
 	    if (err) {
 	      res.send(err);
